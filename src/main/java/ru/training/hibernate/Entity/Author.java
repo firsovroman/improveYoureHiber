@@ -17,12 +17,25 @@ public class Author implements Serializable {
 
     @Id
     @GeneratedValue(
-            strategy= GenerationType.AUTO,
+            strategy= GenerationType.IDENTITY,
             generator="native"
     )
 
     private long id;
     private String name;
+
+    public Author() {
+
+    }
+
+    public Author(String name) {
+        this.name = name;
+    }
+
+    public Author(long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
     @Override
     public String toString() {
